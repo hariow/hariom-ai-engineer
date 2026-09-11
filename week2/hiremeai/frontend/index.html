@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="HireMeAI — AI-powered candidate intelligence and resume assistant."
+    >
+
+    <title>HireMeAI — AI Candidate</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- App -->
+    <div class="app-shell">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="brand-mark">
+                    <span>H</span>
+                </div>
+
+                <div class="brand-text">
+                    <div class="brand-name">HireMe<span>AI</span></div>
+                    <div class="brand-subtitle">Candidate Intelligence</div>
+                </div>
+            </div>
+
+            <div class="header-status">
+
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span>AI Online</span>
+                </div>
+
+                <div class="status-pill resume-status">
+                    <span class="status-icon">✓</span>
+                    <span>Resume Ready</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main-content">
+
+            <!-- Hero -->
+
+            <section class="hero">
+
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    AI-POWERED CANDIDATE PROFILE
+                </div>
+
+                <h1>
+                    Meet the candidate
+                    <span>behind the resume.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Ask questions about Hariom's skills, projects,
+                    education, experience and technical background.
+                    HireMeAI answers using verified candidate information.
+                </p>
+
+            </section>
+
+
+            <!-- ================= CHAT CARD ================= -->
+
+            <section class="chat-card">
+
+                <div class="chat-header">
+
+                    <div class="chat-agent">
+
+                        <div class="agent-avatar">
+                            <div class="agent-core"></div>
+                        </div>
+
+                        <div>
+                            <div class="agent-name">
+                                HireMeAI
+                            </div>
+
+                            <div class="agent-description">
+                                Candidate AI Assistant
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="secure-label">
+                        <span>◆</span>
+                        Resume-grounded
+                    </div>
+
+                </div>
+
+
+                <!-- Messages -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+                    <div class="message ai-message">
+
+                        <div class="message-avatar">
+                            H
+                        </div>
+
+                        <div class="message-content">
+
+                            <div class="message-meta">
+                                HireMeAI
+                                <span>•</span>
+                                AI Assistant
+                            </div>
+
+                            <div class="message-bubble">
+                                Hello. I'm HireMeAI, an AI assistant
+                                representing Hariom's professional profile.
+                                Ask me anything about his skills,
+                                projects, education, or technical background.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Typing Indicator -->
+
+                <div
+                    class="typing-container hidden"
+                    id="typingIndicator"
+                >
+
+                    <div class="message-avatar">
+                        H
+                    </div>
+
+                    <div class="typing-bubble">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Input -->
+
+                <div class="input-area">
+
+                    <div class="input-wrapper">
+
+                        <textarea
+                            id="questionInput"
+                            rows="1"
+                            placeholder="Ask about the candidate..."
+                            maxlength="1000"
+                        ></textarea>
+
+                        <button
+                            id="sendButton"
+                            class="send-button"
+                            type="button"
+                            aria-label="Send question"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line
+                                    x1="22"
+                                    y1="2"
+                                    x2="11"
+                                    y2="13"
+                                ></line>
+
+                                <polygon
+                                    points="22 2 15 22 11 13 2 9 22 2"
+                                ></polygon>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <div class="input-footer">
+
+                        <span>
+                            Answers are grounded in the candidate profile.
+                        </span>
+
+                        <span id="characterCount">
+                            0 / 1000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK QUESTIONS ================= -->
+
+            <section class="quick-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            EXPLORE
+                        </span>
+
+                        <h2>
+                            Start with a question
+                        </h2>
+                    </div>
+
+                    <span class="section-hint">
+                        Select a topic
+                    </span>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <button
+                        class="quick-card"
+                        data-question="Tell me about your technical skills."
+                    >
+
+                        <div class="quick-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <div class="quick-content">
+                            <strong>Technical Skills</strong>
+                            <span>
+                                Languages, frameworks and tools
+                            </span>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-question="Tell me about your projects."
+                    >
+
+                        <div class="quick-icon">
+                            ◈
+                        </div>
+
+                        <div class="quick-content">
+                            <strong>Projects</strong>
+                            <span>
+                                What has the candidate built?
+                            </span>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-question="Tell me about your education."
+                    >
+
+                        <div class="quick-icon">
+                            ◫
+                        </div>
+
+                        <div class="quick-content">
+                            <strong>Education</strong>
+                            <span>
+                                Academic background
+                            </span>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-question="Why should a company consider hiring this candidate?"
+                    >
+
+                        <div class="quick-icon">
+                            ✦
+                        </div>
+
+                        <div class="quick-content">
+                            <strong>Why Hire?</strong>
+                            <span>
+                                Candidate strengths
+                            </span>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CANDIDATE SNAPSHOT ================= -->
+
+            <section class="profile-section">
+
+                <div class="profile-header">
+
+                    <div>
+                        <span class="section-label">
+                            CANDIDATE PROFILE
+                        </span>
+
+                        <h2>
+                            Candidate Snapshot
+                        </h2>
+                    </div>
+
+                    <div class="profile-badge">
+                        <span></span>
+                        Available
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-main">
+
+                        <div class="profile-avatar">
+                            HA
+                        </div>
+
+                        <div class="profile-info">
+
+                            <h3>
+                                Hariom Acharya
+                            </h3>
+
+                            <p>
+                                Computer Engineering Student
+                            </p>
+
+                            <span>
+                                Government Engineering College, Modasa
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <div class="skill-area">
+
+                        <div class="skill-heading">
+                            Core Skills
+                        </div>
+
+                        <div class="skills">
+
+                            <span>Python</span>
+                            <span>C</span>
+                            <span>C++</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>DSA</span>
+                            <span>FastAPI</span>
+                            <span>REST APIs</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>AI / LLM</span>
+                            <span>Groq</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FOOTER ================= -->
+
+            <footer>
+
+                <div>
+                    <strong>HireMeAI</strong>
+                    <span> — AI Candidate Intelligence</span>
+                </div>
+
+                <div>
+                    Built with FastAPI + AI
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
