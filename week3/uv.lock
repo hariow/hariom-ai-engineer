@@ -9,6 +9,7 @@ resolution-markers = [
 [manifest]
 members = [
     "day12",
+    "day13",
     "week3",
 ]
 
@@ -171,6 +172,11 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.4.6" },
     { name = "sentence-transformers", specifier = ">=6.0.1" },
 ]
+
+[[package]]
+name = "day13"
+version = "0.1.0"
+source = { editable = "day13/day13" }
 
 [[package]]
 name = "distro"
@@ -1557,11 +1563,16 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "groq" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "python-dotenv" },
+    { name = "sentence-transformers" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "groq", specifier = ">=1.7.0" },
+    { name = "numpy", specifier = ">=2.4.6" },
     { name = "python-dotenv", specifier = ">=1.2.3" },
+    { name = "sentence-transformers", specifier = ">=6.0.1" },
 ]
